@@ -1,0 +1,22 @@
+.app {
+  color: $white;
+  background: $themeColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  & .header {
+    font-weight: $font-semi-bold;
+    color: $yellow;
+  }
+  & .logo {
+    height: 80px;
+	}
+	& .redux {
+		padding: 10px;
+	}
+  & .label {
+    margin-top: 10px;
+  }
+}

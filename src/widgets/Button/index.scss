@@ -1,0 +1,15 @@
+.button {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 1px solid $shadow;
+  border-radius: 5px;
+  color: $shadow;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 0 0 5px $shadow;
+  }
+}
