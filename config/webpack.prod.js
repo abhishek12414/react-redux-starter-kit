@@ -11,7 +11,8 @@ module.exports = {
 	entry: './src/index.js',
 	output: {
 		path: path.join(__dirname, '../dist'),
-		filename: '[name].[contentHash].js'
+		filename: '[name].[contentHash].js',
+		publicPath: '/'
 	},
 	optimization: {
 		minimizer: [

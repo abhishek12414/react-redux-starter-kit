@@ -8,15 +8,17 @@ module.exports = {
 		hot: true,
 		open: true,
 		overlay: true,
-		port: 8081,
+		port: 3001,
 		proxy: {
 			'/api': 'http://localhost:3000'
-		}
+		},
+		historyApiFallback: true,
 	},
 	entry: './src/index.js',
 	output: {
 		path: path.join(__dirname, '/dist'),
-		filename: '[name].js'
+		filename: '[name].js',
+		publicPath: "/"
 	},
 	resolve: {
 		alias: {
