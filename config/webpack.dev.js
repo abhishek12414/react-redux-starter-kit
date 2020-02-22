@@ -14,7 +14,7 @@ module.exports = {
 		},
 		historyApiFallback: true,
 	},
-	entry: './src/index.js',
+	entry: ['@babel/polyfill', './src/index.js'],
 	output: {
 		path: path.join(__dirname, '/dist'),
 		filename: '[name].js',
