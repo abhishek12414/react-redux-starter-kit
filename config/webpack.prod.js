@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
+const HtmlCriticalWebpackPlugin = require("html-critical-webpack-plugin");
 
 module.exports = (env) => {
 	return {
@@ -104,6 +105,19 @@ module.exports = (env) => {
 					collapseWhitespace: true
 				},
 				inject: true
+			}),
+			new HtmlCriticalWebpackPlugin({
+				base: path.resolve(__dirname, '../dist'),
+				src: 'index.html',
+				dest: 'index.html',
+				inline: true,
+				minify: true,
+				extract: true,
+				width: 1366,
+				height: 768,
+				penthouse: {
+					blockJSRequests: false,
+				}
 			})
 		]
 	}

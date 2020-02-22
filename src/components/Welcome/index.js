@@ -6,13 +6,24 @@ const Welcome = () => {
 	const [posts, setPosts] = useState([]);
 	const [loading, setLoading] = useState(false)
 
-	const fetchPosts = async () => {
+	const fetchPosts = () => {
 		setLoading(true);
-		await Axios.get('https://jsonplaceholder.typicode.com/todos')
+		Axios.get('https://jsonplaceholder.typicode.com/todos')
 			.then(res => {
 				setPosts(res.data);
 				setLoading(false);
+			}).catch(err => {
+				console.log(error)
 			});
+		// fetch('https://jsonplaceholder.typicode.com/todos')
+		// 	.then(res => res.json())
+		// 	.then(res => {
+		// 		setPosts(res);
+		// 		setLoading(false);
+		// 	})
+		// 	.catch(err => {
+		// 		console.log(error)
+		// 	});
 	}
 
 	useEffect(() => {
